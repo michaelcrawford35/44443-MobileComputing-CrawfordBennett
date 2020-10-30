@@ -18,25 +18,71 @@ class Player{
         }
         return _shared
     }
-    
-    private var playerHealth:Int
+    //player info never/rarely change
     private var playerName:String
+    private var playerMaxHealth:Int
+    private var playerLevel:Int
+    private var playerClass:String
+    
+    //player info change alot
+    private var playerHealth:Int
+    private var playerExperience:Int
     private var playerStamina:Int
     private var playerMana:Int
+    
+    
+    //player inventory stuff
     private var playerInventory:[Item]
-    private var PlayerWeapon:[Weapon]
-    private var PlayerArmor:[Armor]
-    private var PlayerGold:Int
+    private var playerWeapon:[Weapon]
+    private var playerArmor:[Armor]
+    private var playerGold:Int
+    
+    //player location
+    private var playerX:Int
+    private var playerY:Int
+    
+    
+    
     private init(){
         playerHealth = 100
         playerName = ""
         playerStamina = 100
         playerMana = 100
+        playerMaxHealth = 100
+        playerLevel = 1
+        playerExperience = 0
         playerInventory = []
-        PlayerWeapon = [Fists.YourFists]
-        PlayerArmor = []
-        PlayerGold = 0
+        playerWeapon = [Fists.YourFists]
+        playerArmor = []
+        playerGold = 0
+        playerClass = ""
+        playerX = 0
+        playerY = 0
+        
     }
+    
+    func setPlayerInfo(name:String,pClass:String){
+        playerName = name
+        playerClass = pClass
+        
+    }
+    func damagePlayer(dmg:Int){
+        playerHealth -= dmg
+        
+    }
+    func travel(direction:String){
+        /*
+         switch statement for all 8
+         directions
+         
+         */
+    }
+    func getlocation()->[Int]{
+        return [playerX,playerY]
+        
+    }
+    
+    
     
 }
 class Item{
@@ -80,6 +126,9 @@ class Weapon: Item{
     }
     func getDurability()->Int{
         return self.weaponDurability
+    }
+    func damageWeapon(num:Int){
+        weaponDurability -= num
     }
     func repairDura(){
         self.weaponDurability = 100
