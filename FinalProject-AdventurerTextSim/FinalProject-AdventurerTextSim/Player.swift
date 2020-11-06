@@ -77,8 +77,55 @@ class Player{
          
          */
     }
+    func setPlayerGold(gold:Int){
+        playerGold = gold
+    }
+    func getPlayerGold()-> Int{
+        return playerGold
+    }
+    func increaseGold(gold:Int){
+        playerGold += gold
+    }
+    func decreaseGold(gold:Int){
+        playerGold -= gold
+    }
+    
+    func moveX(num: Int){
+        playerX += num
+    }
+    func moveY(num: Int){
+        playerY += num
+    }
+    func setlocation(x:Int, y:Int){
+        playerX = x
+        playerY = y
+    }
+    
     func getlocation()->[Int]{
         return [playerX,playerY]
+    }
+    func increasePlayerXP(xp: Int){
+        playerExperience += xp
+        playerLevelCheck()
+    }
+    func getPlayerLevel()->Int{
+        return playerLevel
+    }
+    func playerLevelCheck(){
+        /*
+         case switch for current level and xp required for next level
+         if requirement is met, playerLevelUp is called
+         if not , the function ends there
+         
+         */
+    }
+    func playerLevelUp(){
+        playerLevel += 1
+        /*
+         player stat increase
+         maybe case switch to activate any level reliant abilities
+         */
+        playerLevelCheck()
         
     }
     
