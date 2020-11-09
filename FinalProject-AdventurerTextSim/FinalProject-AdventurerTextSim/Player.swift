@@ -23,7 +23,9 @@ class Player{
     private var playerMaxHealth:Int
     private var playerLevel:Int
     private var playerClass:String
-    
+    private var playerIsAlive:Bool
+    private var playerlives:Int
+    private var playerRespawnLocation:[Int]
     //player info change alot
     private var playerHealth:Int
     private var playerExperience:Int
@@ -58,18 +60,44 @@ class Player{
         playerClass = ""
         playerX = 0
         playerY = 0
-        
+        playerIsAlive = true
+        playerlives = 3
+        playerRespawnLocation = [0,0]
     }
     
-    func setPlayerInfo(name:String,pClass:String){
+    func setPlayerInfo(name:String,pClass:String,dificulty: String){
+        
         playerName = name
         playerClass = pClass
+        if dificulty == "Hard"{
+            playerlives = 1
+        }
+        else{
+            playerlives = 3
+        }
         
     }
-    func damagePlayer(dmg:Int){
-        playerHealth -= dmg
-        
+    //----------------------------------------------------------------------------------------
+    //Location/Movement functions
+    //----------------------------------------------------------------------------------------
+
+    
+    
+    func getPlayerSpawnLocation()-> [Int]{
+        return playerRespawnLocation
     }
+    func setPlayerSpawnLocation(location: [Int]){
+        playerRespawnLocation = location
+    }
+    func setlocation(x:Int, y:Int){
+        playerX = x
+        playerY = y
+    }
+    func getlocation()->[Int]{
+        return [playerX,playerY]
+    }
+    
+    
     func travel(direction:String){
         /*
          switch statement for all 8
@@ -77,6 +105,18 @@ class Player{
          
          */
     }
+    func moveX(num: Int){
+        playerX += num
+    }
+    func moveY(num: Int){
+        playerY += num
+    }
+    //----------------------------------------------------------------------------------------
+    //Gold functions
+    //----------------------------------------------------------------------------------------
+
+    
+    
     func setPlayerGold(gold:Int){
         playerGold = gold
     }
@@ -90,20 +130,12 @@ class Player{
         playerGold -= gold
     }
     
-    func moveX(num: Int){
-        playerX += num
-    }
-    func moveY(num: Int){
-        playerY += num
-    }
-    func setlocation(x:Int, y:Int){
-        playerX = x
-        playerY = y
-    }
+    //----------------------------------------------------------------------------------------
+    //Level/Xp functions
+    //----------------------------------------------------------------------------------------
+
     
-    func getlocation()->[Int]{
-        return [playerX,playerY]
-    }
+    
     func increasePlayerXP(xp: Int){
         playerExperience += xp
         playerLevelCheck()
@@ -122,16 +154,55 @@ class Player{
     func playerLevelUp(){
         playerLevel += 1
         /*
-         player stat increase
-         maybe case switch to activate any level reliant abilities
+         
+         
          */
         playerLevelCheck()
+        
+    }
+    //----------------------------------------------------------------------------------------
+    //Health/Life functions functions
+    //----------------------------------------------------------------------------------------
+    
+    
+    func increaseHealth(num: Int){
+        playerHealth += num
+        if playerHealth > playerMaxHealth{
+            playerHealth = playerMaxHealth
+        }
+    }
+    func damagePlayer(dmg:Int){
+        playerHealth -= dmg
+        
+    }
+    func lifeUpdate(){
+        if playerHealth <= 0{
+            playerlives -= 1
+            if playerlives == 0{
+                playerIsAlive = false
+            }
+            else{
+                respawn()
+            }
+        }
+    }
+    func lifeCheck()-> Bool{
+        return playerIsAlive
+    }
+    func respawn(){
+        playerHealth = playerMaxHealth
+        let location = getPlayerSpawnLocation()
+        setlocation(x: location[0], y: location[1])
         
     }
     
     
     
 }
+//----------------------------------------------------------------------------------------
+//Item class and sub classes
+//----------------------------------------------------------------------------------------
+
 class Item{
     private var itemName:String
     private var itemType:String
@@ -209,6 +280,12 @@ class Armor: Item{
     }
     
 }
+
+//----------------------------------------------------------------------------------------
+//subclasses of Weapon Class
+//----------------------------------------------------------------------------------------
+
+
 class Sword:Weapon{
     
     override init(name:String,rarity:String,value:Int,damage:Int,stamCost:Int,durability:Int,weapType:String,descript:String){
