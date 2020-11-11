@@ -67,6 +67,7 @@
 				3F33137925473D1900FCB166 /* AppDelegate.swift */,
 				3F33137B25473D1900FCB166 /* FirstViewController.swift */,
 				3F33137D25473D1900FCB166 /* SecondViewController.swift */,
+				3FAF26272549DE68001870B1 /* ThirdViewController.swift */,
 				3F33137F25473D1900FCB166 /* Main.storyboard */,
 				3FAF26292549DEBC001870B1 /* Player.swift */,
 				3FAF262D255C6C24001870B1 /* Creature.swift */,
@@ -74,7 +75,6 @@
 				3F33138225473D1A00FCB166 /* Assets.xcassets */,
 				3F33138425473D1A00FCB166 /* LaunchScreen.storyboard */,
 				3F33138725473D1A00FCB166 /* Info.plist */,
-				3FAF26272549DE68001870B1 /* ThirdViewController.swift */,
 			);
 			path = "FinalProject-AdventurerTextSim";
 			sourceTree = "<group>";
