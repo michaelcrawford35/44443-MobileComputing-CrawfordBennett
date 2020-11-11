@@ -16,6 +16,7 @@
 		3FAF26282549DE68001870B1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF26272549DE68001870B1 /* ThirdViewController.swift */; };
 		3FAF262A2549DEBC001870B1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF26292549DEBC001870B1 /* Player.swift */; };
 		3FAF262C255C6444001870B1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF262B255C6444001870B1 /* Item.swift */; };
+		3FAF262E255C6C24001870B1 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF262D255C6C24001870B1 /* Creature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3FAF26272549DE68001870B1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		3FAF26292549DEBC001870B1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3FAF262B255C6444001870B1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		3FAF262D255C6C24001870B1 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3F33137D25473D1900FCB166 /* SecondViewController.swift */,
 				3F33137F25473D1900FCB166 /* Main.storyboard */,
 				3FAF26292549DEBC001870B1 /* Player.swift */,
+				3FAF262D255C6C24001870B1 /* Creature.swift */,
 				3FAF262B255C6444001870B1 /* Item.swift */,
 				3F33138225473D1A00FCB166 /* Assets.xcassets */,
 				3F33138425473D1A00FCB166 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				3F33137E25473D1900FCB166 /* SecondViewController.swift in Sources */,
 				3F33137A25473D1900FCB166 /* AppDelegate.swift in Sources */,
 				3FAF26282549DE68001870B1 /* ThirdViewController.swift in Sources */,
+				3FAF262E255C6C24001870B1 /* Creature.swift in Sources */,
 				3FAF262A2549DEBC001870B1 /* Player.swift in Sources */,
 				3FAF262C255C6444001870B1 /* Item.swift in Sources */,
 				3F33137C25473D1900FCB166 /* FirstViewController.swift in Sources */,

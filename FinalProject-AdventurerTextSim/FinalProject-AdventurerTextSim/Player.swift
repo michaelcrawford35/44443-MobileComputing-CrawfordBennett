@@ -22,15 +22,17 @@ class Player{
     private var playerName:String
     private var playerMaxHealth:Int
     private var playerLevel:Int
-    private var playerClass:String
+    private var playerClass:String // not used yet
     private var playerIsAlive:Bool
     private var playerlives:Int
     private var playerRespawnLocation:[Int]
+    
+    
     //player info change alot
     private var playerHealth:Int
     private var playerExperience:Int
-    private var playerStamina:Int
-    private var playerMana:Int
+    private var playerStamina:Int   // not used yet
+    private var playerMana:Int   // not used yet
     
     
     //player inventory stuff
