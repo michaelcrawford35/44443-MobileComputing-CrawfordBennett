@@ -9,7 +9,22 @@
 import Foundation
 
 struct Map{
+    private static var _globalMap:Map!
     
+    static var globalMap:Map{
+        if _globalMap==nil {
+            _globalMap = Map();
+            
+        }
+        return _globalMap
+    }
+    
+    private var TheMapArray:[[String]];
+    
+    private init(){
+        
+        
+    }
     
     
 }
