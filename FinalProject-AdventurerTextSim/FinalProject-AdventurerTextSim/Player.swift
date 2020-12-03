@@ -64,7 +64,7 @@ class Player{
         playerY = 12
         playerIsAlive = true
         playerlives = 3
-        playerRespawnLocation = [0,0]
+        playerRespawnLocation = [12,12]
     }
     
     func setPlayerInfo(name:String,pClass:String,difficulty: String){
