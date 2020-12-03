@@ -102,24 +102,24 @@ class Player{
     func travel(direction:String){
         switch direction{
         case "north":
-            moveY(num: 1)
+            moveY(num: -1)
         case "east":
             moveX(num: 1)
         case "south":
-            moveY(num: -1)
+            moveY(num: 1)
         case "west":
             moveX(num: -1)
         case "northeast":
-            moveY(num: 1)
+            moveY(num: -1)
             moveX(num: 1)
         case "northwest":
-            moveY(num: 1)
+            moveY(num: -1)
             moveX(num: -1)
         case "southeast":
-            moveY(num: -1)
+            moveY(num: 1)
             moveX(num: 1)
         case "southwest":
-            moveY(num: -1)
+            moveY(num: 1)
             moveX(num: -1)
         default:
             print("ERROR MOVING PLAYER")

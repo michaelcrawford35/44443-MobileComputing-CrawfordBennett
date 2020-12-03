@@ -23,8 +23,15 @@ class FirstViewController: UIViewController
         switch inputTF.text?.lowercased()
         {
         case "move north":
-            Player.shared.travel(direction: "north")
-            outputLBL.text = "You move north. Player pos \(Player.shared.getlocation())"
+            if Player.shared.getlocation()[1] != 0
+            {
+                Player.shared.travel(direction: "north")
+                outputLBL.text = "You move north. Player pos \(Player.shared.getlocation())"
+            }
+            else
+            {
+                outputLBL.text = "You cannnot move further north. Player pos \(Player.shared.getlocation())"
+            }
         case "move east":
             Player.shared.travel(direction: "east")
             outputLBL.text = "You move east. Player pos \(Player.shared.getlocation())"
