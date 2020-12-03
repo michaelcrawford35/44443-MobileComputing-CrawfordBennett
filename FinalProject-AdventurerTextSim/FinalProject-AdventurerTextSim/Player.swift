@@ -67,11 +67,11 @@ class Player{
         playerRespawnLocation = [0,0]
     }
     
-    func setPlayerInfo(name:String,pClass:String,dificulty: String){
+    func setPlayerInfo(name:String,pClass:String,difficulty: String){
         
         playerName = name
         playerClass = pClass
-        if dificulty == "Hard"{
+        if difficulty == "Hard"{
             playerlives = 1
         }
         else{
