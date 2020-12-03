@@ -17,11 +17,12 @@ class FirstViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBOutlet weak var outputLBL: UILabel!
+    @IBOutlet weak var inputTF: UITextField!
     @IBAction func submitBTN(_ sender: Any)
     {
-        switch outputLBL.text?.lowercased()
+        switch inputTF.text?.lowercased()
         {
-        case "move":
+        case "move north":
             Player.shared.travel(direction: "north")
             outputLBL.text = "You move north. Player pos \(Player.shared.getlocation())"
         default:

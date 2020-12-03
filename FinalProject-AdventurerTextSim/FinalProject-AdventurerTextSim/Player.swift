@@ -60,8 +60,8 @@ class Player{
         playerArmor = []
         playerGold = 0
         playerClass = ""
-        playerX = 0
-        playerY = 0
+        playerX = 12
+        playerY = 12
         playerIsAlive = true
         playerlives = 3
         playerRespawnLocation = [0,0]
