@@ -38,7 +38,7 @@ class FirstViewController: UIViewController
                 outputLBL.text = "You move north. \nPlayer pos \(Player.shared.getlocation())"
             }
         case "move east":
-            if ((playerLocation[0] == 24))
+            if (playerLocation[0] == 24)
             {
                 outputLBL.text = "You can't move further east. \nPlayer pos \(Player.shared.getlocation())"
             }
@@ -48,9 +48,9 @@ class FirstViewController: UIViewController
                 outputLBL.text = "You move east. \nPlayer pos \(Player.shared.getlocation())"
             }
         case "move south":
-            if ((playerLocation[1] == 24))
+            if (playerLocation[1] == 21)
             {
-                outputLBL.text = "You can't move further south. \nPlayer pos \(Player.shared.getlocation())"
+                outputLBL.text = "You can't move further south. The water continues off into the foreseeable distance. \nPlayer pos \(Player.shared.getlocation())"
             }
             else
             {
@@ -61,6 +61,10 @@ class FirstViewController: UIViewController
             if ((playerLocation[0] == 0))
             {
                 outputLBL.text = "You can't move further west. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else if ((playerLocation[0] == 1 && playerLocation[1] == 4) || (playerLocation[0] == 2 && playerLocation[1] == 3) || (playerLocation[0] == 3 && playerLocation[1] == 2) || (playerLocation[0] == 4 && playerLocation[1] == 1) || (playerLocation[0] == 5 && playerLocation[1] == 0))
+            {
+                outputLBL.text = "You can't move further west. \nThe water stops you. \nPlayer pos \(Player.shared.getlocation())"
             }
             else
             {
