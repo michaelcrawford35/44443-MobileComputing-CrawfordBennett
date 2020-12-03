@@ -21,6 +21,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-U6-ljR">
                                 <rect key="frame" x="183" y="372" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitBTN:" destination="9pv-A4-QxB" eventType="touchUpInside" id="PFO-ke-3wc"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uX4-Lv-4Oa">
                                 <rect key="frame" x="64" y="436" width="287" height="184"/>
@@ -109,6 +112,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play!" image="Play" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="outputLBL" destination="u7d-qS-J0Y" id="iLB-DB-buR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
