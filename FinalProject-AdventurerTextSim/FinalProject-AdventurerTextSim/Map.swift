@@ -57,4 +57,16 @@ struct Map
     }
     
     
+    func getLocationInfo(x: Int, y: Int)-> String{
+        
+        return TheMapArray[x][y].rawValue;
+        
+    }
+    
+    func canTraverse(x: Int, y: Int)-> Bool {
+        
+        return TheMapArray[x][y].rawValue != "water";
+        
+    }
+    
 }

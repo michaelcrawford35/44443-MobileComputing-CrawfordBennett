@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController ,UITableViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
+    
     
 }
+
+    
+
