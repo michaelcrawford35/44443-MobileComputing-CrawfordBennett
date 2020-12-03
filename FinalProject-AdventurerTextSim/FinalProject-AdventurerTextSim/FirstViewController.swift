@@ -20,28 +20,54 @@ class FirstViewController: UIViewController
     @IBOutlet weak var inputTF: UITextField!
     @IBAction func submitBTN(_ sender: Any)
     {
+        var playerLocation:[Int] = Player.shared.getlocation()
         switch inputTF.text?.lowercased()
         {
         case "move north":
-            if Player.shared.getlocation()[1] != 0
+            if (playerLocation[1] == 0)
             {
-                Player.shared.travel(direction: "north")
-                outputLBL.text = "You move north. Player pos \(Player.shared.getlocation())"
+                outputLBL.text = "You can't move further north. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else if ((playerLocation[0] == 0 && playerLocation[1] == 5) || (playerLocation[0] == 1 && playerLocation[1] == 4) || (playerLocation[0] == 2 && playerLocation[1] == 3) || (playerLocation[0] == 3 && playerLocation[1] == 2) || (playerLocation[0] == 4 && playerLocation[1] == 1))
+            {
+                outputLBL.text = "You can't move further north. \nThe water stops you. \nPlayer pos \(Player.shared.getlocation())"
             }
             else
             {
-                outputLBL.text = "You cannnot move further north. Player pos \(Player.shared.getlocation())"
+                Player.shared.travel(direction: "north")
+                outputLBL.text = "You move north. \nPlayer pos \(Player.shared.getlocation())"
             }
         case "move east":
-            Player.shared.travel(direction: "east")
-            outputLBL.text = "You move east. Player pos \(Player.shared.getlocation())"
+            if ((playerLocation[0] == 24))
+            {
+                outputLBL.text = "You can't move further east. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else
+            {
+                Player.shared.travel(direction: "north")
+                outputLBL.text = "You move east. \nPlayer pos \(Player.shared.getlocation())"
+            }
         case "move south":
-            Player.shared.travel(direction: "south")
-            outputLBL.text = "You move south. Player pos \(Player.shared.getlocation())"
+            if ((playerLocation[1] == 24))
+            {
+                outputLBL.text = "You can't move further south. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else
+            {
+                Player.shared.travel(direction: "south")
+                outputLBL.text = "You move south. \nPlayer pos \(Player.shared.getlocation())"
+            }
         case "move west":
-            Player.shared.travel(direction: "west")
-            outputLBL.text = "You move west. Player pos \(Player.shared.getlocation())"
-        case "move northeast":
+            if ((playerLocation[0] == 0))
+            {
+                outputLBL.text = "You can't move further west. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else
+            {
+                Player.shared.travel(direction: "west")
+                outputLBL.text = "You move west. \nPlayer pos \(Player.shared.getlocation())"
+            }
+        /*case "move northeast":
             Player.shared.travel(direction: "northeast")
             outputLBL.text = "You move northeast. Player pos \(Player.shared.getlocation())"
         case "move northwest":
@@ -52,7 +78,7 @@ class FirstViewController: UIViewController
             outputLBL.text = "You move southeast. Player pos \(Player.shared.getlocation())"
         case "move southwest":
             Player.shared.travel(direction: "southwest")
-            outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"
+            outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"*/
         default:
             outputLBL.text = "You cannot do that."
         }
