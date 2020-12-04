@@ -8,8 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController
+class SecondViewController: UIViewController,
 {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,3 +28,38 @@ class SecondViewController: UIViewController
         present(alertController, animated:true, completion:nil)
     }
 }
+
+extension SecondViewController: UITableViewDataSource{
+    
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+        {
+            return DiscoveryTracker.dtracker.counter
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dCell",for: indexPath)
+            if(DiscoveryTracker.dtracker.counter > 0){
+                cell.textLabel?.text = DiscoveryTracker.dtracker.array[indexPath.row][2]
+                cell.detailTextLabel?.text = "Location: [\(DiscoveryTracker.dtracker.array[indexPath.row][0]),\(DiscoveryTracker.dtracker.array[indexPath.row][1])]"
+            }
+            return cell
+            
+        }
+        override func viewWillAppear(_ animated: Bool)
+        {
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
