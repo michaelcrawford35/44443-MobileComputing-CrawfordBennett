@@ -229,6 +229,17 @@ class FirstViewController: UIViewController
                 Player.shared.increaseHealth(num: 100)
                 outputLBL.text = "The Town Priest Heals you \nPlayer pos \(Player.shared.getlocation())"
             }
+            else if(battling){
+                //monster attack
+                Player.shared.damagePlayer(dmg: monster.getDamage())
+                // player life check
+                if(!Player.shared.lifeCheck()){
+                    Player.shared.lifeUpdate()
+                    outputLBL.text = "You have died. \nYou Respawn at\(Player.shared.getlocation()) with \(Player.shared.getLives()) lives left"
+                    
+                }
+                
+            }
             else{
                 outputLBL.text = "There is nobody to heal you here \nPlayer pos \(Player.shared.getlocation()) \nTry healing in town"
             }
