@@ -21,24 +21,20 @@ class HistoryTracker{
         return _tracker
     }
     
-    var counter:Int;
-    var array:[[String]];
+    var counter:Int
+    var array:[[String]]
     
     private init(){
-        counter = 0;
-        array = [];
+        counter = 0
+        array = []
     }
     func addHistory(x:Int, y:Int, input: String, output: String){
-        array[counter] = [String(x),String(y), input, output];
-        counter += 1;
+        array.insert([String(x),String(y), input, output], at: counter)
+        counter += 1
         
     }
     func reset(){
-        array = [];
-        counter = 0;
+        array = []
+        counter = 0
     }
-    
-    
-    
-    
 }
