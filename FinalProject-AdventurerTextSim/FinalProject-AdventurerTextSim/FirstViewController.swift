@@ -60,7 +60,7 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
-                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    outputLBL.text = "You move north and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
                 
             }
@@ -133,7 +133,7 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move south, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
-                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    outputLBL.text = "You move south and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
             }
             if(battling){
@@ -170,7 +170,7 @@ class FirstViewController: UIViewController
                     
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
-                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    outputLBL.text = "You move west and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
             }
             if(battling){
