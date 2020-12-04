@@ -15,7 +15,7 @@ class ThirdViewTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as! ThirdTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell",for: indexPath) as! ThirdTableViewCell
         if(HistoryTracker.tracker.counter > 0){
             cell.Input.text = HistoryTracker.tracker.array[indexPath.row][2]
             cell.output.text = HistoryTracker.tracker.array[indexPath.row][3]

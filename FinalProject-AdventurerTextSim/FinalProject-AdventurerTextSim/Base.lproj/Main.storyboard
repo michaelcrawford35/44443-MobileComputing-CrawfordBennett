@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -120,44 +118,6 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--Input History-->
-        <scene sceneID="u8q-KE-zv7">
-            <objects>
-                <viewController id="xTY-7m-ULX" customClass="ThirdViewController" customModule="FinalProject_AdventurerTextSim" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0SS-MP-JG1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD3-ma-ryj">
-                                <rect key="frame" x="125" y="111" width="164.5" height="85"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-UU-Z6N">
-                                <rect key="frame" x="30" y="170" width="354" height="692"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ZD3-ma-ryj" firstAttribute="top" secondItem="vcQ-gW-2bv" secondAttribute="top" constant="67" id="Elt-Tw-fjR"/>
-                            <constraint firstItem="vcQ-gW-2bv" firstAttribute="bottom" secondItem="ZD3-ma-ryj" secondAttribute="bottom" constant="666" id="GXK-Co-QN6"/>
-                            <constraint firstItem="ZD3-ma-ryj" firstAttribute="leading" secondItem="vcQ-gW-2bv" secondAttribute="leading" constant="125" id="IrD-7h-x1v"/>
-                            <constraint firstItem="vcQ-gW-2bv" firstAttribute="trailing" secondItem="ZD3-ma-ryj" secondAttribute="trailing" constant="124.5" id="MbQ-OM-db7"/>
-                            <constraint firstItem="Cbg-UU-Z6N" firstAttribute="top" secondItem="vcQ-gW-2bv" secondAttribute="top" constant="126" id="Rb5-Ad-wbQ"/>
-                            <constraint firstItem="Cbg-UU-Z6N" firstAttribute="leading" secondItem="vcQ-gW-2bv" secondAttribute="leading" constant="30" id="YOf-U9-mP6"/>
-                            <constraint firstItem="vcQ-gW-2bv" firstAttribute="trailing" secondItem="Cbg-UU-Z6N" secondAttribute="trailing" constant="30" id="aTO-Bw-fNd"/>
-                            <constraint firstItem="vcQ-gW-2bv" firstAttribute="bottom" secondItem="Cbg-UU-Z6N" secondAttribute="bottom" id="lNf-um-xQA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vcQ-gW-2bv"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Input History" image="History" id="Y3u-j3-2js"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="awh-MX-ymH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2193" y="-698"/>
-        </scene>
         <!--History-->
         <scene sceneID="iSm-SA-zGO">
             <objects>
@@ -186,11 +146,11 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyCell" rowHeight="69" id="vHB-ga-cXA">
-                                <rect key="frame" x="0.0" y="150" width="414" height="69"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" rowHeight="90" id="vHB-ga-cXA" customClass="ThirdTableViewCell" customModule="FinalProject_AdventurerTextSim" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vHB-ga-cXA" id="Ycf-ec-1YF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpE-67-wsg">
@@ -276,7 +236,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="discoveryCell" id="aRw-ox-Cwe">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="354" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aRw-ox-Cwe" id="1S6-my-3uT">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
@@ -351,7 +311,7 @@
         <image name="Discoveries" width="25" height="25"/>
         <image name="History" width="25" height="25"/>
         <image name="Play" width="25" height="25"/>
-        <image name="gameLogo" width="342.44143676757812" height="44.30859375"/>
+        <image name="gameLogo" width="342" height="44"/>
         <image name="gold" width="50" height="50"/>
         <image name="help" width="50" height="50"/>
     </resources>
