@@ -256,7 +256,7 @@ class FirstViewController: UIViewController
             Player.shared.travel(direction: "southwest")
             outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"*/
         case "commands":
-            outputLBL.text = "Commands: move (direction), attack."
+            outputLBL.text = "Commands: move (direction), attack, heal."
         case "stop it":
             outputLBL.text = "Get some help!"
         case "easter egg":
