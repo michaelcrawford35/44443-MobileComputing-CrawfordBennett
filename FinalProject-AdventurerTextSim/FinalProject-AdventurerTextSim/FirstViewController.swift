@@ -59,7 +59,9 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                 }
-                
+                else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
+                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                }
                 
             }
             if(battling){
@@ -94,7 +96,9 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                 }
-                
+                else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
+                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                }
             }
             if(battling){
                 //monster attack
@@ -132,6 +136,9 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move south, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                 }
+                else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
+                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                }
             }
             if(battling){
                 //monster attack
@@ -166,6 +173,9 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move west, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                     
                 }
+                else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
+                    outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                }
             }
             if(battling){
                 //monster attack
@@ -195,7 +205,6 @@ class FirstViewController: UIViewController
                         
                     
                     }
-                    // change output
                     
                 }
                 else{

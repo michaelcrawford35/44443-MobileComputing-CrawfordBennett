@@ -68,4 +68,7 @@ struct Map
     func monsterHere(xy:[Int])-> Bool{
         return TheMapArray[xy[0]][xy[1]].rawValue == "Hydra" || TheMapArray[xy[0]][xy[1]].rawValue == "Mob" || TheMapArray[xy[0]][xy[1]].rawValue == "Golem"
     }
+    func townHere(xy: [Int])-> Bool{
+        return TheMapArray[xy[0]][xy[1]].rawValue == "Town"
+    }
 }
