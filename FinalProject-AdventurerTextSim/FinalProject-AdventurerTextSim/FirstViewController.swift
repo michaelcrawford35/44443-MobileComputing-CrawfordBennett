@@ -93,6 +93,10 @@ class FirstViewController: UIViewController
             outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"*/
         case "commands":
             outputLBL.text = "Commands: move (direction), attack."
+        case "stop it":
+            outputLBL.text = "Get some help!"
+        case "easter egg":
+            outputLBL.text = "No easter eggs to be found here ;) \n But what if there was? 🤔"
         default:
             outputLBL.text = "You cannot do that."
         }
