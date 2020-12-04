@@ -26,6 +26,9 @@ class Item{
         itemValue = value
         itemDescription = descript
     }
+    func getName()->String{
+        return itemName
+    }
     
 }
 
@@ -90,6 +93,7 @@ class Weapon: Item{
         return self.weaponType
     }
     
+    
 }
 //----------------------------------------------------------------------------------------
 //subclasses of Weapon Class
@@ -129,7 +133,7 @@ class Fists: Weapon{
     private static var _YourFists:Fists!
     static var YourFists:Fists{
         if _YourFists == nil {
-            _YourFists = Fists(name:"My Fists",rarity: "Common",value: 0,damage: 5,stamCost: 1, durability: 1,weapType: "Fists",descript: "You see them daily, do they really need explained")
+            _YourFists = Fists(name:"Fists",rarity: "Common",value: 0,damage: 5,stamCost: 1, durability: 1,weapType: "Fists",descript: "You see them daily, do they really need explained")
         }
         return _YourFists
     }

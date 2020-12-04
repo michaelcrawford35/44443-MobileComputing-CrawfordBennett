@@ -192,7 +192,7 @@ class FirstViewController: UIViewController
             if(battling){
                 //player attack
                 monster.damageCreature(num: Player.shared.getDamage())
-                outputLBL.text = "You attack the \(monster.getName()) \nPlayer pos \(Player.shared.getlocation())"
+                outputLBL.text = "You attack the \(monster.getName()) with your \(Player.shared.getWeapon().getName()) \nPlayer pos \(Player.shared.getlocation())"
                 //health check monster
                 if (monster.lifeCheck()){
                     //monster attack

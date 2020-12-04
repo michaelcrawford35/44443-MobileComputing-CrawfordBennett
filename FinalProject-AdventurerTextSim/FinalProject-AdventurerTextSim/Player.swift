@@ -235,6 +235,8 @@ class Player{
     func getDamage()->Int{
         return playerWeapon[0].getDamage()
     }
-    
+    func getWeapon()-> Weapon{
+        return playerWeapon[0]
+    }
 }
 
