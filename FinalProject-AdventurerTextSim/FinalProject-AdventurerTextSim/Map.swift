@@ -63,7 +63,7 @@ struct Map
     
     func canTraverse(x: Int, y: Int)-> Bool
     {
-        return TheMapArray[x][y].rawValue != "Water";
+        return TheMapArray[x][y].rawValue != "Water"
     }
     
 }

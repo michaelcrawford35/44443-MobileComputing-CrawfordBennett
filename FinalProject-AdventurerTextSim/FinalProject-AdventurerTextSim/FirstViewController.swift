@@ -60,6 +60,10 @@ class FirstViewController: UIViewController
                 outputLBL.text = "You move east. \nPlayer pos \(Player.shared.getlocation())"
             }
         case "move south":
+            print(Map.globalMap.canTraverse(x: playerLocation[0], y: playerLocation[1]+1))
+            print(playerLocation[0])
+            print(playerLocation[1])
+            print(playerLocation[1]+1)
             if (playerLocation[1] == 24)
             {
                 outputLBL.text = "You can't move further south. \nPlayer pos \(Player.shared.getlocation())"
