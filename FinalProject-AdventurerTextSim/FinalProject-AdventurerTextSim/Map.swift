@@ -56,14 +56,16 @@ struct Map
     {
     }
     
-    func getLocationInfo(x: Int, y: Int)-> String
+    func getLocationInfo(xy:[Int])-> String
     {
-        return TheMapArray[x][y].rawValue;
+        return TheMapArray[xy[0]][xy[1]].rawValue;
     }
     
     func canTraverse(x: Int, y: Int)-> Bool
     {
         return TheMapArray[x][y].rawValue != "Water"
     }
-    
+    func monsterHere(xy:[Int])-> Bool{
+        return TheMapArray[xy[0]][xy[1]].rawValue == "Hydra" || TheMapArray[xy[0]][xy[1]].rawValue == "Mob" || TheMapArray[xy[0]][xy[1]].rawValue == "Golem"
+    }
 }

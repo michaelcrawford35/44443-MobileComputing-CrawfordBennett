@@ -26,7 +26,7 @@ class Player{
     private var playerIsAlive:Bool
     private var playerlives:Int
     private var playerRespawnLocation:[Int]
-    
+    private var inBattle:Bool
     
     //player info change alot
     private var playerHealth:Int
@@ -65,6 +65,7 @@ class Player{
         playerIsAlive = true
         playerlives = 3
         playerRespawnLocation = [12,12]
+        inBattle = false;
     }
     
     func setPlayerInfo(name:String,pClass:String,difficulty: String){
@@ -193,7 +194,9 @@ class Player{
     }
     func damagePlayer(dmg:Int){
         playerHealth -= dmg
-        
+        if playerHealth <= 0{
+            playerIsAlive = false 
+        }
     }
     func lifeUpdate(){
         if playerHealth <= 0{
@@ -206,6 +209,9 @@ class Player{
             }
         }
     }
+    func getLives()->Int{
+        return playerlives
+    }
     func lifeCheck()-> Bool{
         return playerIsAlive
     }
@@ -215,8 +221,20 @@ class Player{
         setlocation(x: location[0], y: location[1])
         
     }
+    //----------------------------------------------------------------------------------------
+    //Battle functions functions
+    //----------------------------------------------------------------------------------------
     
+    func isBattling()-> Bool{
+        return inBattle
+    }
     
+    func setBattle(bo:Bool){
+        inBattle = bo
+    }
+    func getDamage()->Int{
+        return playerWeapon[0].getDamage()
+    }
     
 }
 

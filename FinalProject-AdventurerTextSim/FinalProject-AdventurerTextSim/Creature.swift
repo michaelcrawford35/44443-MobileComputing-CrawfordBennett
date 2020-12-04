@@ -17,7 +17,7 @@ class Creature{
     private var isAlive: Bool;
     private var creatureMaxHealth:Int;
 
-    private init(name: String, baseHealth:Int, baseDamage:Int, drops:[Int]){
+    init(name: String, baseHealth:Int, baseDamage:Int, drops:[Int]){
         creatureName = name;
         creatureHealth = baseHealth;
         creatureMaxHealth = baseHealth
@@ -69,9 +69,9 @@ struct CreatureMaker {
             
         }
         // add creatures to array here
-        
-        
-        
+        _cMaker.addCreature(it: Creature(name: "Hydra", baseHealth: 100, baseDamage: 20, drops:[]))
+        _cMaker.addCreature(it: Creature(name: "Golem", baseHealth: 50, baseDamage: 15, drops:[]))
+        _cMaker.addCreature(it: Creature(name: "Mob", baseHealth: 25, baseDamage: 10, drops:[]))
         return _cMaker
     }
     
