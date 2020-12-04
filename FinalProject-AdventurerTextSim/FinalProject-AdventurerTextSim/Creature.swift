@@ -87,7 +87,7 @@ struct CreatureMaker {
     func getCreature(_ name: String)-> Creature{
         
         for crea in creatureArray{
-            var creaName = crea.getName();
+            let creaName = crea.getName();
             if creaName == name{
                 return crea
             }
