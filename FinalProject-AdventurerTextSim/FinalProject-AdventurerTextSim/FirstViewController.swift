@@ -36,7 +36,7 @@ class FirstViewController: UIViewController
             {
                 outputLBL.text = "You can't move further north. \nPlayer pos \(Player.shared.getlocation())"
             }
-            else if ((playerLocation[0] == 0 && playerLocation[1] == 5) || (playerLocation[0] == 1 && playerLocation[1] == 4) || (playerLocation[0] == 2 && playerLocation[1] == 3) || (playerLocation[0] == 3 && playerLocation[1] == 2) || (playerLocation[0] == 4 && playerLocation[1] == 1))
+            else if (Map.globalMap.canTraverse(x: playerLocation[0], y: playerLocation[1]-1) == false)
             {
                 outputLBL.text = "You can't move further north. \nThe water stops you. \nPlayer pos \(Player.shared.getlocation())"
             }
@@ -50,13 +50,21 @@ class FirstViewController: UIViewController
             {
                 outputLBL.text = "You can't move further east. \nPlayer pos \(Player.shared.getlocation())"
             }
+            else if (Map.globalMap.canTraverse(x: playerLocation[0]+1, y: playerLocation[1]) == false)
+            {
+                outputLBL.text = "You can't move further east. \nThe water stops you. \nPlayer pos \(Player.shared.getlocation())"
+            }
             else
             {
-                Player.shared.travel(direction: "north")
+                Player.shared.travel(direction: "east")
                 outputLBL.text = "You move east. \nPlayer pos \(Player.shared.getlocation())"
             }
         case "move south":
-            if (playerLocation[1] == 21)
+            if (playerLocation[1] == 24)
+            {
+                outputLBL.text = "You can't move further south. \nPlayer pos \(Player.shared.getlocation())"
+            }
+            else if (Map.globalMap.canTraverse(x: playerLocation[0], y: playerLocation[1]+1) == false)
             {
                 outputLBL.text = "You can't move further south. The water continues off into the foreseeable distance. \nPlayer pos \(Player.shared.getlocation())"
             }
@@ -70,7 +78,7 @@ class FirstViewController: UIViewController
             {
                 outputLBL.text = "You can't move further west. \nPlayer pos \(Player.shared.getlocation())"
             }
-            else if ((playerLocation[0] == 1 && playerLocation[1] == 4) || (playerLocation[0] == 2 && playerLocation[1] == 3) || (playerLocation[0] == 3 && playerLocation[1] == 2) || (playerLocation[0] == 4 && playerLocation[1] == 1) || (playerLocation[0] == 5 && playerLocation[1] == 0))
+            else if (Map.globalMap.canTraverse(x: playerLocation[0]-1, y: playerLocation[1]) == false)
             {
                 outputLBL.text = "You can't move further west. \nThe water stops you. \nPlayer pos \(Player.shared.getlocation())"
             }
