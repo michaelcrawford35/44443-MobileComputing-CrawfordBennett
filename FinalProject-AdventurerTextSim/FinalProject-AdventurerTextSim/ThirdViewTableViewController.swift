@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ThirdViewTableViewController: UITableViewController {
-
+class ThirdViewTableViewController: UITableViewController
+{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return HistoryTracker.tracker.counter
     }
+    
+    @IBAction func historyHelp(_ sender: UIButton)
+    {
+        let alertController = UIAlertController(title:"Help!", message:"The input history tab is used to see all your previous inputs and the outputs given back to you. You can also see where your player is positioned on the map!", preferredStyle:UIAlertController.Style.alert)
+        
+        alertController.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler:nil))
+        present(alertController, animated:true, completion:nil)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell",for: indexPath) as! ThirdTableViewCell

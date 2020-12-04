@@ -139,6 +139,9 @@
                                     <rect key="frame" x="371" y="0.0" width="35" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="help"/>
+                                    <connections>
+                                        <action selector="historyHelp:" destination="kzs-nT-vVQ" eventType="touchUpInside" id="NG3-En-Lxg"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qH-Kh-K73">
                                     <rect key="frame" x="125" y="65" width="165" height="36"/>
@@ -278,6 +281,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-V3-FAg">
                                 <rect key="frame" x="350" y="60" width="35" height="35"/>
                                 <state key="normal" image="help"/>
+                                <connections>
+                                    <action selector="helpBTN:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="jHU-Cn-b5m"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discoveries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-cc-IeQ">
                                 <rect key="frame" x="107" y="111" width="201" height="36"/>
