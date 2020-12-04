@@ -18,6 +18,7 @@ class FirstViewController: UIViewController
     }
     @IBOutlet weak var outputLBL: UILabel!
     @IBOutlet weak var inputTF: UITextField!
+    
     @IBAction func showHelp(_ sender: UIButton)
     {
         let alertController = UIAlertController(title:"Help!", message:"Welcome to AdventureSim! Type in commands to move, attack and more! For a list of commands, type \"commands\" and press submit. Good luck player!", preferredStyle:UIAlertController.Style.alert)
@@ -25,6 +26,7 @@ class FirstViewController: UIViewController
         alertController.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler:nil))
         present(alertController, animated:true, completion:nil)
     }
+    
     @IBAction func submitBTN(_ sender: Any)
     {
         var playerLocation:[Int] = Player.shared.getlocation()
@@ -90,6 +92,8 @@ class FirstViewController: UIViewController
         case "move southwest":
             Player.shared.travel(direction: "southwest")
             outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"*/
+        case "commands":
+            outputLBL.text = "Commands: move (direction), attack."
         default:
             outputLBL.text = "You cannot do that."
         }

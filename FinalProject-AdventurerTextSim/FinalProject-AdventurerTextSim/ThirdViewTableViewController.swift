@@ -10,11 +10,12 @@ import UIKit
 
 class ThirdViewTableViewController: UITableViewController {
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return HistoryTracker.tracker.counter
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return HistoryTracker.tracker.counter
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell",for: indexPath) as! ThirdTableViewCell
         if(HistoryTracker.tracker.counter > 0){
             cell.Input.text = HistoryTracker.tracker.array[indexPath.row][2]
@@ -24,7 +25,8 @@ class ThirdViewTableViewController: UITableViewController {
         return cell
         
     }
-        override func viewWillAppear(_ animated: Bool) {
-            self.tableView.reloadData()
-        }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        self.tableView.reloadData()
+    }
 }

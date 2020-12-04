@@ -14,7 +14,8 @@ struct Map
     
     enum MapTile:String {case empty = "Empty", town = "Town", water = "Water", mob = "Mob", golem = "Golem", hydra = "Hydra"}
     
-    static var globalMap:Map{
+    static var globalMap:Map
+    {
         if _globalMap==nil {
             _globalMap = Map()
             
@@ -51,22 +52,18 @@ struct Map
         /*24*/[MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water]
         ]
     
-    private init(){
-        
-        
+    private init()
+    {
     }
     
-    
-    func getLocationInfo(x: Int, y: Int)-> String{
-        
+    func getLocationInfo(x: Int, y: Int)-> String
+    {
         return TheMapArray[x][y].rawValue;
-        
     }
     
-    func canTraverse(x: Int, y: Int)-> Bool {
-        
+    func canTraverse(x: Int, y: Int)-> Bool
+    {
         return TheMapArray[x][y].rawValue != "water";
-        
     }
     
 }
