@@ -18,6 +18,13 @@ class FirstViewController: UIViewController
     }
     @IBOutlet weak var outputLBL: UILabel!
     @IBOutlet weak var inputTF: UITextField!
+    @IBAction func showHelp(_ sender: UIButton)
+    {
+        let alertController = UIAlertController(title:"Help!", message:"Welcome to AdventureSim! Type in commands to move, attack and more! For a list of commands, type \"commands\" and press submit. Good luck player!", preferredStyle:UIAlertController.Style.alert)
+        
+        alertController.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler:nil))
+        present(alertController, animated:true, completion:nil)
+    }
     @IBAction func submitBTN(_ sender: Any)
     {
         var playerLocation:[Int] = Player.shared.getlocation()
