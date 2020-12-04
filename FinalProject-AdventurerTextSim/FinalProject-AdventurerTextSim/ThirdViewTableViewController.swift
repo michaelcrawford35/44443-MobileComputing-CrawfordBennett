@@ -17,9 +17,9 @@ class ThirdViewTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as! ThirdTableViewCell
         if(HistoryTracker.tracker.counter > 0){
-            cell.Input.text = HistoryTracker.tracker.array[HistoryTracker.tracker.counter - 1][2]
-            cell.output.text = HistoryTracker.tracker.array[HistoryTracker.tracker.counter - 1][3]
-            cell.xy.text = HistoryTracker.tracker.array[HistoryTracker.tracker.counter - 1][0] + " " + HistoryTracker.tracker.array[HistoryTracker.tracker.counter - 1][1]
+            cell.Input.text = HistoryTracker.tracker.array[indexPath.row][2]
+            cell.output.text = HistoryTracker.tracker.array[indexPath.row][3]
+            cell.xy.text = "\(HistoryTracker.tracker.array[indexPath.row][0]) , \(HistoryTracker.tracker.array[indexPath.row][1])"
         }
         return cell
         
