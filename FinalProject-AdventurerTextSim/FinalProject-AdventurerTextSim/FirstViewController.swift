@@ -57,7 +57,7 @@ class FirstViewController: UIViewController
                     Player.shared.setBattle(bo: true)
                     //Spawn monster
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
-                    outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
+                    outputLBL.text = "You move north, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
