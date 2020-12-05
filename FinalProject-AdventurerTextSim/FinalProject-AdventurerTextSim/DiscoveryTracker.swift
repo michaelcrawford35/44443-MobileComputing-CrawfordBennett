@@ -17,7 +17,7 @@ class DiscoveryTracker{
     static var dtracker:DiscoveryTracker{
         if _dtracker==nil {
             _dtracker = DiscoveryTracker()
-            
+            _dtracker.addDiscovery(x: 12, y: 12, name: "Town")
         }
         return _dtracker
     }

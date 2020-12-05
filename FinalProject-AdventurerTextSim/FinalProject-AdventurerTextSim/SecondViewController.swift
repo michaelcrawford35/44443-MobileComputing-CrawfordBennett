@@ -17,6 +17,7 @@ class SecondViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -27,6 +28,11 @@ class SecondViewController: UIViewController
         alertController.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler:nil))
         present(alertController, animated:true, completion:nil)
     }
+}
+extension SecondViewController: UITableViewDelegate{
+    
+    
+    
 }
 
 extension SecondViewController: UITableViewDataSource{
@@ -47,10 +53,7 @@ extension SecondViewController: UITableViewDataSource{
             return cell
             
         }
-        override func viewWillAppear(_ animated: Bool)
-        {
-            self.tableView.reloadData()
-        }
+        
     }
     
     
