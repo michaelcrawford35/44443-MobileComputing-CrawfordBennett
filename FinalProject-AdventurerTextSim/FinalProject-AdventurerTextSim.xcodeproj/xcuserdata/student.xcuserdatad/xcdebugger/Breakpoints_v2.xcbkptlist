@@ -12,11 +12,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProject-AdventurerTextSim/FirstViewController.swift"
-            timestampString = "628818613.776005"
+            timestampString = "628828338.487069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "submitBTN(_:)"
             landmarkType = "7">
          </BreakpointContent>
