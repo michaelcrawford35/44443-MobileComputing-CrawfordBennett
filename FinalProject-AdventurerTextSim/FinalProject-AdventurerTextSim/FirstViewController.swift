@@ -58,9 +58,11 @@ class FirstViewController: UIViewController
                     //Spawn monster
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move north and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
                 
             }
@@ -95,9 +97,11 @@ class FirstViewController: UIViewController
                     // spawn monster
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move east, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
             if(Player.shared.isBattling()){
@@ -131,9 +135,11 @@ class FirstViewController: UIViewController
                     //Spawn monster
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move south, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move south and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
             if(Player.shared.isBattling()){
@@ -167,10 +173,12 @@ class FirstViewController: UIViewController
                     //Spawn monster
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move west, a \(monster.getName()) is here. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
                     
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move west and find a town. \nPlayer pos \(Player.shared.getlocation())"
+                    DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
             if(Player.shared.isBattling()){

@@ -21,7 +21,6 @@
 		3FAF265625797E67001870B1 /* ThirdViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF265525797E67001870B1 /* ThirdViewTableViewController.swift */; };
 		3FAF265A25798822001870B1 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF265925798822001870B1 /* ThirdTableViewCell.swift */; };
 		3FAF2660257AFD72001870B1 /* DiscoveryTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF265F257AFD72001870B1 /* DiscoveryTracker.swift */; };
-		3FAF2662257B08EF001870B1 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF2661257B08EF001870B1 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		3FAF265525797E67001870B1 /* ThirdViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewTableViewController.swift; sourceTree = "<group>"; };
 		3FAF265925798822001870B1 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
 		3FAF265F257AFD72001870B1 /* DiscoveryTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTracker.swift; sourceTree = "<group>"; };
-		3FAF2661257B08EF001870B1 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +76,12 @@
 				3FAF265925798822001870B1 /* ThirdTableViewCell.swift */,
 				3F33137D25473D1900FCB166 /* SecondViewController.swift */,
 				3F33137B25473D1900FCB166 /* FirstViewController.swift */,
-				3FAF2661257B08EF001870B1 /* ThirdViewController.swift */,
 				3FAF265F257AFD72001870B1 /* DiscoveryTracker.swift */,
 				3F33137F25473D1900FCB166 /* Main.storyboard */,
 				3FAF265525797E67001870B1 /* ThirdViewTableViewController.swift */,
 				3FAF26292549DEBC001870B1 /* Player.swift */,
-				3FAF262D255C6C24001870B1 /* Creature.swift */,
 				3FAF262B255C6444001870B1 /* Item.swift */,
+				3FAF262D255C6C24001870B1 /* Creature.swift */,
 				3FAF262F25630558001870B1 /* Map.swift */,
 				3F33138225473D1A00FCB166 /* Assets.xcassets */,
 				3F33138425473D1A00FCB166 /* LaunchScreen.storyboard */,
@@ -175,7 +172,6 @@
 				3FAF265A25798822001870B1 /* ThirdTableViewCell.swift in Sources */,
 				3FAF262C255C6444001870B1 /* Item.swift in Sources */,
 				3FAF2660257AFD72001870B1 /* DiscoveryTracker.swift in Sources */,
-				3FAF2662257B08EF001870B1 /* ThirdViewController.swift in Sources */,
 				3F33137C25473D1900FCB166 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
