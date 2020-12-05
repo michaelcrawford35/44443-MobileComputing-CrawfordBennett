@@ -31,7 +31,7 @@ class FirstViewController: UIViewController
     @IBAction func submitBTN(_ sender: Any)
     {
         var playerLocation:[Int] = Player.shared.getlocation()
-        var battling:Bool = Player.shared.isBattling()
+       
         
         switch inputTF.text?.lowercased()
         {
@@ -64,7 +64,7 @@ class FirstViewController: UIViewController
                 }
                 
             }
-            if(battling){
+            if(Player.shared.isBattling()){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -100,7 +100,7 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move east and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
             }
-            if(battling){
+            if(Player.shared.isBattling()){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -136,7 +136,7 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move south and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
             }
-            if(battling){
+            if(Player.shared.isBattling()){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -173,7 +173,7 @@ class FirstViewController: UIViewController
                     outputLBL.text = "You move west and find a town. \nPlayer pos \(Player.shared.getlocation())"
                 }
             }
-            if(battling){
+            if(Player.shared.isBattling()){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -185,7 +185,7 @@ class FirstViewController: UIViewController
                 
             }
         case "attack":
-            if(battling){
+            if(Player.shared.isBattling()){
                 //player attack
                 monster.damageCreature(num: Player.shared.getDamage())
                 outputLBL.text = "You attack the \(monster.getName()) with your \(Player.shared.getWeapon().getName()) \nPlayer pos \(Player.shared.getlocation())"
@@ -225,7 +225,7 @@ class FirstViewController: UIViewController
                 Player.shared.increaseHealth(num: 100)
                 outputLBL.text = "The Town Priest Heals you \nPlayer pos \(Player.shared.getlocation())"
             }
-            else if(battling){
+            else if(Player.shared.isBattling()){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
