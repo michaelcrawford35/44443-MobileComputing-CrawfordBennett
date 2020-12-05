@@ -56,7 +56,7 @@ class Player{
         playerLevel = 1
         playerExperience = 0
         playerInventory = []
-        playerWeapon = [Fists.YourFists, Sword.Excaliber]
+        playerWeapon = [Fists.YourFists]
         playerArmor = []
         playerGold = 0
         playerClass = ""
@@ -246,10 +246,11 @@ class Player{
     func getWeapon()-> Weapon{
         return playerWeapon[0]
     }
-    func weaponSwitch(){
-        playerWeapon[2] = playerWeapon[0]
-        playerWeapon[0] = playerWeapon[1]
-        playerWeapon[1] = playerWeapon[2]
+    func equipSword(){
+        playerWeapon[0] = Sword.Excaliber
+    }
+    func equipFist(){
+        playerWeapon[0] = Fists.YourFists
     }
 }
 

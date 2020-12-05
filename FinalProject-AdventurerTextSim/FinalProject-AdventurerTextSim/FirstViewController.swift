@@ -43,6 +43,7 @@ class FirstViewController: UIViewController
         switch inputTF.text?.lowercased()
         {
         case "move north":
+            var Battlenum:Int = 1
             if (playerLocation[1] == 0)
             {
                 outputLBL.text = "You can't move further north."
@@ -66,6 +67,7 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move north, a \(monster.getName()) is here."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
+                    Battlenum = 0
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move north and find a town."
@@ -73,7 +75,7 @@ class FirstViewController: UIViewController
                 }
                 
             }
-            if(Player.shared.isBattling()){
+            if(Player.shared.isBattling() && Battlenum == 1 ){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -84,7 +86,9 @@ class FirstViewController: UIViewController
                 }
                 
             }
+            Battlenum = 1
         case "move east":
+            var Battlenum:Int = 1
             if (playerLocation[0] == 24)
             {
                 outputLBL.text = "You can't move further east."
@@ -105,13 +109,14 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move east, a \(monster.getName()) is here."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
+                    Battlenum = 0
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move east and find a town."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
-            if(Player.shared.isBattling()){
+            if(Player.shared.isBattling() && Battlenum == 1 ){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -122,7 +127,9 @@ class FirstViewController: UIViewController
                 }
                 
             }
+            Battlenum = 1
         case "move south":
+            var Battlenum:Int = 1
             if (playerLocation[1] == 24)
             {
                 outputLBL.text = "You can't move further south."
@@ -143,13 +150,14 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move south, a \(monster.getName()) is here."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
+                    Battlenum = 0
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move south and find a town."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
-            if(Player.shared.isBattling()){
+            if(Player.shared.isBattling() && Battlenum == 1 ){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -160,7 +168,9 @@ class FirstViewController: UIViewController
                 }
                 
             }
+            Battlenum = 1
         case "move west":
+            var Battlenum:Int = 1
             if ((playerLocation[0] == 0))
             {
                 outputLBL.text = "You can't move further west."
@@ -181,14 +191,14 @@ class FirstViewController: UIViewController
                     monster = CreatureMaker.cMaker.getCreature(Map.globalMap.getLocationInfo(xy: Player.shared.getlocation()))
                     outputLBL.text = "You move west, a \(monster.getName()) is here."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: monster.getName())
-                    
+                    Battlenum = 0
                 }
                 else if(Map.globalMap.townHere(xy: Player.shared.getlocation())){
                     outputLBL.text = "You move west and find a town."
                     DiscoveryTracker.dtracker.addDiscovery(x: Player.shared.getlocation()[0], y: Player.shared.getlocation()[1], name: "Town")
                 }
             }
-            if(Player.shared.isBattling()){
+            if(Player.shared.isBattling() && Battlenum == 1 ){
                 //monster attack
                 Player.shared.damagePlayer(dmg: monster.getDamage())
                 // player life check
@@ -199,11 +209,12 @@ class FirstViewController: UIViewController
                 }
                 
             }
+            Battlenum = 1
         case "attack":
             if(Player.shared.isBattling()){
                 //player attack
                 monster.damageCreature(num: Player.shared.getDamage())
-                outputLBL.text = "You attack the \(monster.getName()) with your \(Player.shared.getWeapon().getName()) \nPlayer pos \(Player.shared.getlocation())"
+                outputLBL.text = "You attack the \(monster.getName()) with your \(Player.shared.getWeapon().getName())"
                 //health check monster
                 if (monster.lifeCheck()){
                     //monster attack
@@ -220,6 +231,7 @@ class FirstViewController: UIViewController
                 }
                 else{
                     outputLBL.text = "You have slain a \(monster.getName())"
+                    Player.shared.setBattle(bo: false)
                     if monster.getName() == "Hydra"{
                         Player.shared.increaseGold(gold: 100)
                     }
@@ -254,6 +266,23 @@ class FirstViewController: UIViewController
             else{
                 outputLBL.text = "There is nobody to heal you here.\nTry healing in a town."
             }
+        case "equip sword":
+            if(Player.shared.getWeapon().getWeaponType() != "Sword"){
+                Player.shared.equipSword()
+                outputLBL.text = "You equip \(Player.shared.getWeapon().getName()). \n\(Player.shared.getWeapon().getDesc())"
+            }
+            else{
+                outputLBL.text = "You already have your sword equiped"
+            }
+        case "store weapon":
+            if(Player.shared.getWeapon().getWeaponType() != "Fist"){
+                let temp = Player.shared.getWeapon()
+                Player.shared.equipFist()
+                outputLBL.text = "You put away \(temp.getName()). You are left with your fists. \n\(Player.shared.getWeapon().getDesc())"
+            }
+            else{
+                outputLBL.text = "Your weapon is already stored"
+            }
         /*case "move northeast":
             Player.shared.travel(direction: "northeast")
             outputLBL.text = "You move northeast. Player pos \(Player.shared.getlocation())"
@@ -267,7 +296,7 @@ class FirstViewController: UIViewController
             Player.shared.travel(direction: "southwest")
             outputLBL.text = "You move southwest. Player pos \(Player.shared.getlocation())"*/
         case "commands":
-            outputLBL.text = "Commands: move (direction), attack, heal."
+            outputLBL.text = "Commands: move (cardinal direction), attack, heal, equip sword, store weapon."
         case "stop it":
             outputLBL.text = "Get some help!"
         case "easter egg":
