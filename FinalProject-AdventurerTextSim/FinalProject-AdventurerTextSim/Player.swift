@@ -198,6 +198,14 @@ class Player{
             playerIsAlive = false 
         }
     }
+    func getCurrentHealth() -> Int
+    {
+        return playerHealth
+    }
+    func getMaxHealth() -> Int
+    {
+        return playerMaxHealth
+    }
     func lifeUpdate(){
         if playerHealth <= 0{
             playerlives -= 1
