@@ -101,7 +101,13 @@ class Weapon: Item{
 
 
 class Sword:Weapon{
-    
+    private static var _Excaliber:Sword!
+    static var Excaliber:Sword{
+        if _Excaliber == nil {
+            _Excaliber = Sword(name:"Excaliber",rarity: "Legendary",value: 10000,damage: 20,stamCost: 1, durability: 1,weapType: "Sword",descript: "This legendary sword has a habit of finding great heroes **Wink")
+        }
+        return _Excaliber
+    }
     override init(name:String,rarity:String,value:Int,damage:Int,stamCost:Int,durability:Int,weapType:String,descript:String){
         super.init(name:name,rarity:rarity,value:value,damage:damage,stamCost:stamCost,durability:durability,weapType:"Sword",descript:descript)
     }
