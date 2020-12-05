@@ -32,8 +32,8 @@ class DiscoveryTracker{
     func addDiscovery(x:Int, y:Int, name: String){
         var isNotIn = true
         for i in array{
-            if(String(x) == i[0]){
-                if(String(y) == i[1]){
+            if(x == Int(i[0]) ?? 0){
+                if(y == Int(i[1]) ?? 0){
                     isNotIn = false
                 }
             }
