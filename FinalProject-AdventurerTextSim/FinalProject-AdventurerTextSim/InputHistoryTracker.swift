@@ -28,11 +28,15 @@ class HistoryTracker{
         counter = 0
         array = []
     }
+    
+    // Adds input and output to history
     func addHistory(x:Int, y:Int, input: String, output: String){
         array.insert([String(x),String(y), input, output], at: counter)
         counter += 1
         
     }
+    
+    // Resets history
     func reset(){
         array = []
         counter = 0

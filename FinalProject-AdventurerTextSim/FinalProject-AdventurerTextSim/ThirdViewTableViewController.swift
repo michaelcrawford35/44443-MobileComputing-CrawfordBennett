@@ -15,6 +15,7 @@ class ThirdViewTableViewController: UITableViewController
         return HistoryTracker.tracker.counter
     }
     
+    // Function for help button
     @IBAction func historyHelp(_ sender: UIButton)
     {
         let alertController = UIAlertController(title:"Help!", message:"The input history tab is used to see all your previous inputs and the outputs given back to you. You can also see where your player is positioned on the map!", preferredStyle:UIAlertController.Style.alert)

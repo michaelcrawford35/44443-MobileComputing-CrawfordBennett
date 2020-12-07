@@ -23,6 +23,7 @@ struct Map
         return _globalMap
     }
     
+    // Map tiles stored here
     private var TheMapArray:[[MapTile]] =
         [
         /*0*/[MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.water, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.mob, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.empty, MapTile.water, MapTile.water, MapTile.water, MapTile.water],
@@ -56,6 +57,7 @@ struct Map
     {
     }
     
+    // Functions for accessing the map below
     func getLocationInfo(xy:[Int])-> String
     {
         return TheMapArray[xy[0]][xy[1]].rawValue;

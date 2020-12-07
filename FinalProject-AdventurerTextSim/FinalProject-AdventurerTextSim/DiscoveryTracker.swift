@@ -29,6 +29,8 @@ class DiscoveryTracker{
         counter = 0
         array = []
     }
+    
+    // Function to add a newly discovered town
     func addDiscovery(x:Int, y:Int, name: String){
         var isNotIn = true
         for i in array{
@@ -44,6 +46,8 @@ class DiscoveryTracker{
             counter += 1
         }
     }
+    
+    // Function to reset discoveries
     func reset(){
         array = []
         counter = 0

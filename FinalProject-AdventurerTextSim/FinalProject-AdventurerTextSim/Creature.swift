@@ -26,6 +26,7 @@ class Creature{
         isAlive = true;
     }
     
+    // Used to scale mobs with player level.
     func modifyCreature(playerLevel: Int){
         for _ in 1...playerLevel{
             creatureHealth += creatureHealth/10;
@@ -34,6 +35,8 @@ class Creature{
         }
         
     }
+    
+    // More general functions for battling
     func getDamage()->Int{
         return creatureDamage;
     }
@@ -60,6 +63,8 @@ class Creature{
 
 }
 
+
+// Struct used to generate creatures
 struct CreatureMaker {
     private static var _cMaker:CreatureMaker!
     

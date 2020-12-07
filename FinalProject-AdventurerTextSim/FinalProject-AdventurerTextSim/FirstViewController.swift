@@ -22,6 +22,8 @@ class FirstViewController: UIViewController
     @IBOutlet weak var posLBL: UILabel!
     
     @IBOutlet weak var gold: UILabel!
+    
+    // Function for help button
     @IBAction func showHelp(_ sender: UIButton)
     {
         let alertController = UIAlertController(title:"Help!", message:"Welcome to AdventureSim! Type in commands to move, attack and more! For a list of commands, type \"commands\" and press submit. Good luck player!", preferredStyle:UIAlertController.Style.alert)
@@ -29,17 +31,21 @@ class FirstViewController: UIViewController
         alertController.addAction(UIAlertAction(title:"OK", style:UIAlertAction.Style.default, handler:nil))
         present(alertController, animated:true, completion:nil)
     }
+    
+    // Function to update player stats displayed
     func updatePlayerStats() -> Void
     {
         healthLBL.text = "\(Player.shared.getCurrentHealth())/\(Player.shared.getMaxHealth())"
         posLBL.text = "\(Player.shared.getlocation())"
     }
     var monster:Creature = CreatureMaker.cMaker.getCreature("Mob")
+    
+    // Function for player movement submission, includes switch for different inputs
     @IBAction func submitBTN(_ sender: Any)
     {
         var playerLocation:[Int] = Player.shared.getlocation()
        
-        
+        // Switch statement for inputs
         switch inputTF.text?.lowercased()
         {
         case "move north":

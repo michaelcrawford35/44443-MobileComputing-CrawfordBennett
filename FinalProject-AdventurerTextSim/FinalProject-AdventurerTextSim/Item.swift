@@ -104,7 +104,7 @@ class Weapon: Item{
 //subclasses of Weapon Class
 //----------------------------------------------------------------------------------------
 
-
+// Sword weapon class
 class Sword:Weapon{
     private static var _Excaliber:Sword!
     static var Excaliber:Sword{
@@ -118,6 +118,8 @@ class Sword:Weapon{
     }
     
 }
+
+// Bow weapon class - not implemented
 class Bow: Weapon {
     
      override init(name:String,rarity:String,value:Int,damage:Int,stamCost:Int,durability:Int,weapType:String,descript:String){
@@ -125,6 +127,8 @@ class Bow: Weapon {
     }
     
 }
+
+// Staff weapon class - not implemented
 class Staff: Weapon{
     
     private var manaCost:Int
@@ -140,6 +144,8 @@ class Staff: Weapon{
     }
     
 }
+
+// Fists weapon class
 class Fists: Weapon{
     private static var _YourFists:Fists!
     static var YourFists:Fists{
